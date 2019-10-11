@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>throttle节流</title>
+</head>
+
+<body>
+    <div>
+        <button id="throttle">
+            节流throttle
+        </button>
+    </div>
+</body>
+<script>
+    var throttle = document.getElementById('throttle');
+    throttle.addEventListener('click', newthrottle(SayHI))
+
+    function newthrottle(fn) {
+        let State = true;
+        return function () {
+            if (!State) {
+                return;
+            }
+            State = false;
+            let timer = null;
+            timer = setTimeout(() => {
+                State = true;
+                fn.call(this, arguments);
+            }, 1000)
+        }
+    }
+
+    function SayHI() {
+        console.log('节流success');
+    }
+</script>
+
+</html>
