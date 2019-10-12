@@ -55,20 +55,31 @@
         var sCss = "";
 
         for (var i = 0; i < 190; i++) {
-            sCss += "#wrap ul li:nth-of-type(" + (i ) + "){-webkit-transform: rotate("  + i * 3 + "deg);}";
+            sCss += "#wrap ul li:nth-of-type(" + (i) + "){-webkit-transform: rotate(" + i * 3 + "deg);}";
             oLi += "<li></li>";
         };
         oList.innerHTML = oLi;
         oCss.innerHTML += sCss;
         toTime();
-        setInterval(toTime, 1000);
+        setInterval(toTime, 100);
 
         function toTime() {
-            var oDate = new Date();
-            var iSec = oDate.getSeconds();
-            aas.style.WebkitTransform = "rotate(" + iSec + "deg)";
+            //var oDate = new Date();
+            // var iSec = oDate.getSeconds() * 11;
+            // var iSec = oDate.getSeconds() * 11;
+            aas.style.WebkitTransform = "rotate(" + getMath() + "deg)";
+
             oCss.innerHTML += "#wrap ul li{background:" + getRandomColor() + ";}";
         };
+        var math = 1
+
+        function getMath() {
+            math = math + 1;
+            if (math === 60) {
+                math = 0
+            }
+            return math
+        }
 
         function getRandomColor() {
             var r = Math.floor(Math.random() * 255);
