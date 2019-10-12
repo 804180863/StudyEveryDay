@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>签到</title>
+    <style>
+        #phone{
+            width: 400px;
+            height: 600px;
+            margin: 0px auto;
+            border: 3px solid #000;
+            
+        }
+        #ani {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgb(0, 117, 248);
+            text-align: center;
+            line-height: 160px;
+            float: left;
+            margin-top: 90%;
+            margin-left: 31%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="phone">
+        <div id="ani">
+            一键签到
+        </div>
+    </div>
+
+</body>
+<script>
+    var ani = document.getElementById('ani');
+    ani.addEventListener('click', newani());
+
+    function newani() {
+        return function () {
+            alert('签到完成')
+        }
+    }
+</script>
+
+</html>
