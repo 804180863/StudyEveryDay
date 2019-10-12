@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style id="css">
+        body {
+            background: #000;
+        }
+
+        #wrap {
+            width: 600px;
+            height: 600px;
+            margin: 100px auto;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        #wrap ul {
+            margin: 0;
+            padding: 0;
+            height: 300px;
+            position: relative;
+            list-style: none;
+        }
+
+        #wrap ul li {
+            width: 2px;
+            height: 18px;
+            background: red;
+            position: absolute;
+            left: 297px;
+            top: 0;
+            -webkit-transform-origin: center 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <ul id="list">
+
+        </ul>
+
+    </div>
+
+    <script>
+        var oList = document.getElementById("list");
+        var oCss = document.getElementById("css");
+        var aas = document.getElementById("wrap");
+        var aab = document.getElementById('list').children;
+        var oLi = "";
+        var sCss = "";
+
+        for (var i = 0; i < 190; i++) {
+            sCss += "#wrap ul li:nth-of-type(" + (i ) + "){-webkit-transform: rotate("  + i * 3 + "deg);}";
+            oLi += "<li></li>";
+        };
+        oList.innerHTML = oLi;
+        oCss.innerHTML += sCss;
+        toTime();
+        setInterval(toTime, 1000);
+
+        function toTime() {
+            var oDate = new Date();
+            var iSec = oDate.getSeconds();
+            aas.style.WebkitTransform = "rotate(" + iSec + "deg)";
+            oCss.innerHTML += "#wrap ul li{background:" + getRandomColor() + ";}";
+        };
+
+        function getRandomColor() {
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            var colors = 'rgb(' + r + ',' + g + ',' + b + ')';
+            return colors
+        }
+    </script>
+</body>
+
+</html>
