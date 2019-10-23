@@ -1,10 +1,10 @@
 <template>
   <div id="wrapper">
     <div id="title" >
-        
       <h2 @click="start()">图表自建系统</h2>
-      <h3>打开</h3><h3>新建</h3>
+       <span>打开</span> <span>新建</span>
     </div>
+   
     <canvas id="canvas" width="1950px" height="1000px"></canvas>
     <canvas id="canvasbg" width="1950px" height="1000px"></canvas>
   </div>
@@ -313,6 +313,14 @@ export default {
   z-index: -222;
 }
 #title h2 {
+  color: black;
+  font-size: 85px;
+  letter-spacing: 62pt;
+  font-family: "museo-slab";
+  cursor: pointer;
+}
+#title span {
+ 
   color: black;
   font-size: 85px;
   letter-spacing: 62pt;
