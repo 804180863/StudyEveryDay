@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #ball {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #000;
+            margin: 150px auto;
+            position: relative;
+            z-index: 4;
+
+        }
+
+        #ball2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #000;
+            margin: 0 auto;
+        }
+
+        #smallball1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            left: -62px;
+            top: 20px;
+            z-index: 1;
+        }
+
+        #smallball2 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            left: 162px;
+            top: 20px;
+            z-index: 1;
+        }
+
+        #smallball3 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            left: 152px;
+            top: 120px;
+            z-index: 1;
+        }
+
+        #line {
+            width: 400px;
+            /* transform: rotate(200deg); */
+            height: 1px;
+            background: blue;
+             /* position: absolute; 
+             left: 130px;
+            top: 170px;  */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ball">
+        <div id="line"></div>
+        <div id="smallball1"></div>
+        <div id="smallball2"></div>
+        <div id="smallball3"></div>
+        <div id="ball2">
+            <div id="smallball1"></div>
+            <div id="smallball2"></div>
+            <div id="smallball3"></div>
+        </div>
+
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/animejs/2.2.0/anime.js"></script>
+<script>
+    var bigball = document.getElementById('ball');
+    var bigball2 = document.querySelectorAll('#ball2');
+    var line = document.querySelectorAll('#line');
+    var smallball1 = document.getElementById('smallball1');
+    var smallball2 = document.getElementById('smallball2');
+    var smallball3 = document.getElementById('smallball3');
+    var elements = document.querySelectorAll('#smallball1,#smallball2,#smallball3');
+    anime({
+        targets: elements,
+        width: ['0px', '50px'],
+        height: ['0px', '50px'],
+        backgroundColor: '#000',
+        easing: 'easeInOutQuad',
+        delay: 2000
+    });
+    anime({
+        targets: line,
+        width: ['0%','600px'], // -> from '28px' to '100%',
+        easing: 'easeInOutQuad',
+        direction: 'alternate',
+        loop: true
+    });
+    anime({
+        targets: bigball2,
+        translateX: ['420px', '450px'],
+        translateY: ['100px', '145px'],
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutSine'
+    })
+    anime({
+        targets: bigball2,
+        translateY: ['0px', '145px'],
+        translateX: ['0px', '450px'],
+        delay: 1000
+    });
+</script>
+
+</html>

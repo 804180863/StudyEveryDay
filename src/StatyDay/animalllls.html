@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #ball {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #000;
+            margin: 250px auto;
+            position: relative;
+            z-index: 4;
+
+        }
+
+        #ball1 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #000;
+            margin: 0 auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        #ball2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #000;
+            margin: 0 auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        #ball3 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #000;
+            margin: 0 auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        #ball4,#ball5,#ball6,#ball7,#ball8,#ball9,#ball10,#ball11{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #000;
+            margin: 0 auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        #smallball1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            left: -62px;
+            top: 20px;
+            z-index: 1;
+        }
+
+        #smallball2 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            left: 162px;
+            top: 20px;
+            z-index: 1;
+        }
+
+        #smallball3 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            left: 152px;
+            top: 120px;
+            z-index: 1;
+        }
+
+        #line {
+            width: 400px;
+            /* transform: rotate(200deg); */
+            height: 1px;
+            background: blue;
+            /* position: absolute; 
+             left: 130px;
+            top: 170px;  */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ball">
+        <div id="ball1"></div>
+        <div id="ball2"></div>
+        <div id="ball3"></div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/animejs/2.2.0/anime.js"></script>
+<script>
+    var bigball = document.getElementById('ball');
+    var ball1 = document.querySelectorAll('#ball1');
+    var ball2 = document.querySelectorAll('#ball2');
+    var ball3 = document.querySelectorAll('#ball3');
+
+    anime({
+        targets: ball1,
+        translateX: ['435px', '450px'],
+        translateY: ['-145px', '-155px'],
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutSine'
+    })
+    anime({
+        targets: ball1,
+        width: ['0px', '150px'],
+        height: ['0px', '150px'],
+        translateY: ['0px', '-145px'],
+        translateX: ['0px', '450px'],
+        delay: 1000,
+        duration: 3000
+    });
+
+    anime({
+        targets: ball2,
+        translateX: ['450px', '460px'],
+        translateY: ['145px', '155px'],
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutSine'
+    })
+    anime({
+        targets: ball2,
+        width: ['0px', '150px'],
+        height: ['0px', '150px'],
+        translateY: ['0px', '145px'],
+        translateX: ['0px', '450px'],
+        delay: 1000,
+        duration: 3000
+    });
+
+    anime({
+        targets: ball3,
+        translateX: ['-450px', '-460px'],
+        translateY: ['245px', '255px'],
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutSine'
+    })
+    anime({
+        targets: ball3,
+        width: ['0px', '150px'],
+        height: ['0px', '150px'],
+        translateY: ['0px', '245px'],
+        translateX: ['0px', '-450px'],
+        delay: 1000,
+        duration: 4000
+    });
+
+</script>
+
+</html>
